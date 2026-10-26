@@ -1,0 +1,13 @@
+TECTIQUE 0.9.0 - ATUALIZAR SEM PERDER DADOS
+
+1. Feche a Tectique antiga com Ctrl+C e aguarde encerrar.
+2. Faça backup da pasta inteira, incluindo .local, master.key e .env, se existir.
+3. Extraia o novo ZIP e copie o conteúdo de tectique-node sobre a instalação antiga.
+4. Substitua arquivos de código. Preserve .local e .env: este ZIP não os inclui.
+5. No terminal da pasta, execute npm run setup para instalar as novas dependências.
+6. Abra Iniciar.cmd. A migração do PostgreSQL é automática.
+7. Acesse http://127.0.0.1:8000 e entre com a conta existente.
+
+Leia README.md para configurar HTTP, Webhook, SMTP e o novo CRM.
+Nenhum provedor de e-mail foi contratado/configurado e não há hospedagem pública.
+Não apague .local/master.key: ela permite abrir as credenciais criptografadas.

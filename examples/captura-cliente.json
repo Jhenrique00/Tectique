@@ -1,0 +1,37 @@
+{
+  "name": "Captura de clientes por webhook",
+  "definition": {
+    "nodes": [
+      {
+        "id": "entrada",
+        "type": "trigger.webhook",
+        "name": "Formulário recebido",
+        "config": {},
+        "position": {
+          "x": 36,
+          "y": 36
+        }
+      },
+      {
+        "id": "cliente",
+        "type": "crm.contact",
+        "name": "Salvar cliente no CRM",
+        "config": {
+          "name": "{{ trigger.name }}",
+          "email": "{{ trigger.email }}",
+          "source": "Formulário via webhook"
+        },
+        "position": {
+          "x": 296,
+          "y": 36
+        }
+      }
+    ],
+    "edges": [
+      {
+        "from": "entrada",
+        "to": "cliente"
+      }
+    ]
+  }
+}
